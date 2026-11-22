@@ -1,5 +1,0 @@
-(async()=>{const el=document.getElementById("credentials");
-const titles={experience:"Experience letters",appreciation:"Appreciation",recommendation:"Recommendations","employment-verification":"Employment verification","professional-recognition":"Professional recognition"};
-try{const d=await (await fetch("../data/credentials.json")).json();const out=Object.keys(titles).map(k=>{const items=(d[k]||[]);
-return `<div class="card"><h2 class="zoom">${titles[k]}</h2>${items.length?`<div class="grid g2">${items.map(i=>`<div><h3>${i.title}</h3><p class="meta">${i.issuer||""} ${i.date||""}</p>${i.preview?`<img src="../${i.preview}" alt="Preview of ${i.title}" loading="lazy" style="max-width:100%;border:1px solid var(--line)">`:""}<p><a href="../${i.file}" target="_blank" rel="noopener">Open document</a></p></div>`).join("")}</div>`:'<p class="note">No documents added yet. Add entries in data/credentials.json.</p>'}</div>`}).join("");
-el.innerHTML=out}catch(e){el.innerHTML='<p class="note">Could not load data/credentials.json. Serve the folder or use GitHub Pages.</p>'}})();
