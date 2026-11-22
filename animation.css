@@ -1,6 +1,0 @@
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero-text,.portrait{animation:rise .7s cubic-bezier(.22,.61,.36,1) both}.portrait{animation-delay:.12s}
-.zoom{transition:transform .35s cubic-bezier(.22,.61,.36,1),text-shadow .35s;will-change:transform}
-@media(hover:hover) and (pointer:fine){.zoom{transform-origin:left center;position:relative}.page-head .zoom:hover,.zoom:hover{transform:scale(1.04) translateY(-2px);text-shadow:0 6px 14px rgba(20,43,74,.18);z-index:5}.card:hover{box-shadow:0 10px 28px rgba(20,43,74,.09)}.magnetic{will-change:transform}}
-@media(hover:none){.zoom:hover{transform:none;text-shadow:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.zoom:hover{transform:none!important}}
