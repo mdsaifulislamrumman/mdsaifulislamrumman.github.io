@@ -1,0 +1,66 @@
+/* ==========================================================================
+   animation.css  ·  restrained motion
+   - Heading hover zoom (pointer devices only; no layout shift)
+   - Hero entrance + scroll reveal (only hidden when JS is running)
+   - prefers-reduced-motion → everything simplified
+   ========================================================================== */
+
+/* ----- Heading hover zoom / "closer to viewer" -----
+   transform & text-shadow do not affect layout, so surrounding content never moves.
+   width: fit-content keeps the hover area equal to the text itself. */
+@media (hover: hover) and (pointer: fine) {
+  main :is(h1, h2, h3) {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    transform-origin: left center;
+    transform: perspective(700px) translate3d(0, 0, 0) scale(1);
+    transition: transform .45s cubic-bezier(.2, .8, .2, 1), text-shadow .45s cubic-bezier(.2, .8, .2, 1);
+    will-change: transform;
+  }
+  main :is(h1, h2, h3):hover {
+    z-index: 5;
+    transform: perspective(700px) translate3d(0, -2px, 18px) scale(1.04);
+    text-shadow: 0 8px 18px rgba(20, 43, 74, .16);
+  }
+  main h1:hover { transform: perspective(900px) translate3d(0, -2px, 18px) scale(1.03); }
+}
+
+/* ----- Hero entrance ----- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(.985); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-copy > * { animation: fade-up .7s var(--ease) both; }
+.hero-copy > :nth-child(1) { animation-delay: .05s; }
+.hero-copy > :nth-child(2) { animation-delay: .12s; }
+.hero-copy > :nth-child(3) { animation-delay: .19s; }
+.hero-copy > :nth-child(4) { animation-delay: .26s; }
+.hero-copy > :nth-child(5) { animation-delay: .33s; }
+.hero-copy > :nth-child(6) { animation-delay: .4s; }
+.hero-copy > :nth-child(7) { animation-delay: .47s; }
+.hero-visual { animation: fade-in .9s var(--ease) .15s both; }
+
+/* ----- Scroll reveal (content stays visible if JS fails) ----- */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0s); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important; animation-delay: 0s !important;
+    transition-duration: .001ms !important; transition-delay: 0s !important; scroll-behavior: auto !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+  main :is(h1, h2, h3):hover { transform: none; text-shadow: none; }
+  .btn { transform: none; }
+}
+
+/* Gentle stagger for grids of revealed cards */
+.js .grid > .reveal:nth-child(2), .js .interest-grid > .reveal:nth-child(2) { --d: .07s; }
+.js .grid > .reveal:nth-child(3), .js .interest-grid > .reveal:nth-child(3) { --d: .14s; }
+.js .grid > .reveal:nth-child(4), .js .interest-grid > .reveal:nth-child(4) { --d: .21s; }

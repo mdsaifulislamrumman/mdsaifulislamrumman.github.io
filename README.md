@@ -18,7 +18,7 @@ python -m http.server 8000      # then open http://localhost:8000
 
 1. Create a repository (e.g. `my-portfolio`) and upload **the contents of this folder** (keep `index.html` at the repo root).
 2. Repository → **Settings → Pages** → Source: *Deploy from a branch* → Branch: `main` / `(root)` → Save.
-3. After the site is live, **replace the placeholder URL** `https://YOUR-USERNAME.github.io/my-portfolio/` with your real site address in:
+3. After the site is live, **replace the placeholder URL** `https://mdsaifulislamrumman.github.io/` with your real site address in:
    `index.html`, every file in `pages/` (canonical + Open Graph tags), `robots.txt` and `sitemap.xml`.
    (Use your editor's "Find in files" → "Replace all".)
 

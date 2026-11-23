@@ -1,0 +1,33 @@
+dimension,label,revenue
+month,Jan,235485.72
+month,Feb,244591.93
+month,Mar,322661.73
+month,Apr,347710.52
+month,May,228356.56
+month,Jun,375180.19
+month,Jul,214835.92
+month,Aug,258289.35
+month,Sep,318078.08
+month,Oct,271307.54
+month,Nov,371110.6
+month,Dec,274997.18
+region,Central,802603.64
+region,North,787107.33
+region,East,658276.02
+region,South,627690.52
+region,West,586927.81
+category,Computers,2058536.24
+category,Monitors,737406.12
+category,Networking,291619.52
+category,Storage,269998.05
+category,Accessories,85917.49
+category,Office Supplies,19127.9
+channel,Online,1112657.22
+channel,Corporate Sales,1013948.69
+channel,Retail Store,906981.87
+channel,Marketplace,429017.54
+top_product,Gaming Laptop,665930.53
+top_product,Laptop Pro 14,404051.34
+top_product,Laptop Air 13,403380.02
+top_product,All-in-One PC,389723.94
+top_product,Ultrawide Monitor,271543.21

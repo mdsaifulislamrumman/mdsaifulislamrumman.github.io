@@ -1,0 +1,3 @@
+-- Placeholder for the SQL analysis project.
+-- Add your own queries here and place the dataset next to this file as dataset.csv.
+-- No results are claimed until you add and verify them.

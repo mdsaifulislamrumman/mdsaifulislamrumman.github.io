@@ -1,0 +1,62 @@
+{
+  "_readme": "Add a project by copying an object below. Paths are relative to the site root. Set \"published\": false to hide a project without deleting it. Do not add results you cannot verify.",
+  "projects": [
+    {
+      "id": "excel-sales-dashboard",
+      "published": true,
+      "title": "Excel Sales Performance Dashboard",
+      "category": "Excel · Data Analysis",
+      "description": "An interactive Excel dashboard built on a sales dataset of 2,000 order records. It summarises revenue and order activity by time period, region, product category, sales channel and product, with slicers and date timelines for filtering.",
+      "highlights": [
+        "KPI cards for total revenue, total orders, quantity sold and average order value",
+        "Slicers for region, product category, customer type and sales channel, plus date timelines",
+        "Charts for revenue by month, region, product category and sales channel, and a top-5 products view"
+      ],
+      "tools": ["Microsoft Excel", "PivotTables", "Pivot Charts", "Slicers & Timelines", "Data Visualization", "KPI Analysis"],
+      "image": "projects/excel-dashboard/preview.png",
+      "imageAlt": "Screenshot of the Sales Performance Dashboard in Excel showing KPI cards, slicers and revenue charts",
+      "folder": "projects/excel-dashboard/",
+      "showcase": true,
+      "files": [
+        { "label": "Dataset (.xlsx)", "path": "projects/excel-dashboard/sales_data.xlsx" },
+        { "label": "Dashboard (.xlsm)", "path": "projects/excel-dashboard/dashboard.xlsm" }
+      ]
+    },
+    {
+      "id": "python-analysis",
+      "published": false,
+      "title": "Python Data Analysis (placeholder)",
+      "category": "Python · Exploratory Data Analysis",
+      "description": "Placeholder — add your project description here once the analysis is complete.",
+      "tools": ["Python"],
+      "image": "",
+      "imageAlt": "",
+      "folder": "projects/python-analysis/",
+      "files": []
+    },
+    {
+      "id": "sql-analysis",
+      "published": false,
+      "title": "SQL Analysis (placeholder)",
+      "category": "SQL · Data Retrieval",
+      "description": "Placeholder — add your project description here once the analysis is complete.",
+      "tools": ["SQL"],
+      "image": "",
+      "imageAlt": "",
+      "folder": "projects/sql-analysis/",
+      "files": []
+    },
+    {
+      "id": "power-bi-dashboard",
+      "published": false,
+      "title": "Power BI Dashboard (placeholder)",
+      "category": "Power BI · Business Intelligence",
+      "description": "Placeholder — add your project description here once the dashboard is complete.",
+      "tools": ["Power BI"],
+      "image": "",
+      "imageAlt": "",
+      "folder": "projects/power-bi/",
+      "files": []
+    }
+  ]
+}
