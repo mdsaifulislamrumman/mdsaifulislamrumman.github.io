@@ -1,7 +1,7 @@
 /* ==========================================================================
    script.js  ·  core behaviour shared by every page
    Navigation · scroll reveal · magnetic buttons · back-to-top ·
-   media viewer dialog (window.PF.openViewer) · contact form · copy buttons
+   media viewer dialog (window.PF.openViewer) · copy buttons
    ========================================================================== */
 (() => {
   'use strict';
@@ -133,31 +133,4 @@
     catch { if (label) label.textContent = 'Press Ctrl+C to copy'; }
     setTimeout(() => { if (label) label.textContent = original; }, 2000);
   }));
-
-  /* ---------- Contact form (static site → composes an email in the visitor's mail app) ---------- */
-  const form = $('#contact-form');
-  if (form) {
-    const status = $('#form-status');
-    const fields = ['name', 'email', 'subject', 'message'];
-    const validate = () => {
-      let ok = true;
-      fields.forEach(n => {
-        const input = form.elements[n]; const wrap = input.closest('.field');
-        const bad = !input.value.trim() || (n === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim()));
-        wrap.classList.toggle('has-error', bad);
-        input.setAttribute('aria-invalid', String(bad));
-        if (bad && ok) { input.focus(); ok = false; }
-      });
-      return ok;
-    };
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!validate()) { status.textContent = 'Please complete the highlighted fields.'; return; }
-      const v = n => form.elements[n].value.trim();
-      const body = `${v('message')}\n\n—\n${v('name')}\n${v('email')}`;
-      const href = `mailto:${form.dataset.to}?subject=${encodeURIComponent(v('subject'))}&body=${encodeURIComponent(body)}`;
-      status.textContent = 'Opening your email app… If nothing opens, use the “Copy email” button and write to me directly.';
-      window.location.href = href;
-    });
-  }
 })();

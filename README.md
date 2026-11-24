@@ -27,12 +27,12 @@ python -m http.server 8000      # then open http://localhost:8000
 ```
 my-portfolio/
 ├── index.html                  Home
-├── pages/                      about · skills · experience · education · training · projects · credentials · contact
+├── pages/                      about · skills · experience · education · training · projects · credentials
 ├── css/                        style.css (tokens + components) · responsive.css · animation.css
 ├── js/                         script.js (core) · projects.js · charts.js · credentials.js
 ├── assets/
-│   ├── images/profile.png      ← your profile picture
-│   ├── icons/                  favicon.svg · apple-touch-icon.png
+│   ├── images/                 profile.png · site-logo.webp
+│   ├── icons/                  apple-touch-icon.png
 │   └── documents/
 │       ├── resume.pdf          ← your CV
 │       └── credentials/        experience · appreciation · recommendation · employment-verification · professional-recognition · previews
@@ -55,7 +55,7 @@ my-portfolio/
 
 ## Notes
 
-- **Contact form:** a static site has no server, so the form opens the visitor's email app with the message pre-filled (`mailto:`). To receive messages directly, connect a free form service such as Formspree and set it as the form `action`.
+
 - **Chart.js** loads from the jsDelivr CDN (pinned to v4.4.7). If it cannot load, the page automatically shows the same data as an accessible table. To self-host, download `chart.umd.js` into `js/` and change the `<script>` tag in `pages/projects.html`.
 - **Fonts:** Inter from Google Fonts, with a system-font fallback.
 - **Accessibility:** skip link, keyboard-friendly navigation, visible focus states, ARIA on the menu/tabs/dialogs, and `prefers-reduced-motion` support (heading zoom, magnetic buttons and reveal animations are disabled/simplified). Hover effects only apply on mouse/trackpad devices.
